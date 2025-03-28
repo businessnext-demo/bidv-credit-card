@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIDV Credit Card - Apply Now</title>
+    <style>
+        :root {
+            --bidv-blue: #00524E;
+            --bidv-light-blue: #00524E;
+            --bidv-gold: #DAA520;
+            --bidv-light-gray: #f5f5f5;
+            --bidv-dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bidv-light-gray);
+            color: var(--bidv-dark-gray);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-toggle button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--bidv-dark-gray);
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .language-toggle button.active {
+            background-color: var(--bidv-blue);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bidv-blue) 0%, var(--bidv-light-blue) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .card-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--bidv-blue);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--bidv-blue);
+        }
+        
+        /* Form Section */
+        .form-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-section h2 {
+            font-size: 2rem;
+            color: var(--bidv-blue);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .card-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--bidv-blue);
+            box-shadow: 0 0 0 2px rgba(0,78,158,0.2);
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn-primary {
+            background-color: var(--bidv-blue);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--bidv-light-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--bidv-light-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--bidv-gold);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--bidv-gold);
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card-benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+           /* Carousel Styles */
+           .carousel-section {
+            padding: 40px 0;
+            background-color: #f8f8f8;
+        }
+        
+        .carousel-container {
+            width: 100%;
+            position: relative;
+            margin: 0 auto 30px;
+            overflow: hidden;
+        }
+        
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 15px 0; /* Add padding to accommodate shadow */
+        }
+        
+        .carousel-card {
+            width: 185px;
+            height: 297px;
+            margin: 0 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .carousel-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        
+        /* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    position: relative;
+    animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--bidv-blue);
+}
+
+.consultation-btn {
+    background-color: var(--bidv-gold);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0.5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.consultation-btn:hover {
+    background-color: #c69500;
+}
+.thank-you-message {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+.thank-you-message h3 {
+    color: var(--bidv-blue);
+    margin-bottom: 15px;
+}
+.hero-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-button-container button {
+    position: relative;
+}
+.thank-you-message button {
+    display: block;
+    margin: 20px auto 0;
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="BIDV LOGO.png" alt="BIDV Logo">
+                </div>
+                <div class="language-toggle">
+                    <button class="active" onclick="switchLanguage('en')">English</button>
+                    <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container" style="position: relative;">
+            <h1 class="lang-en">Premium Credit Card Solutions</h1>
+            <h1 class="lang-vi" style="display: none;">Giải Pháp Thẻ Tín Dụng Cao Cấp</h1>
+            <p class="lang-en">Enjoy exclusive benefits, enhanced security, and worldwide acceptance with BIDV Credit Cards.</p>
+            <p class="lang-vi" style="display: none;">Tận hưởng các đặc quyền độc quyền, bảo mật nâng cao và chấp nhận toàn cầu với Thẻ Tín Dụng BIDV.</p>
+            <!-- Absolutely positioned buttons -->
+            <button class="consultation-btn lang-en" onclick="openConsultationModal()">Request Consultation</button>
+            <button class="consultation-btn lang-vi" style="display: none;" onclick="openConsultationModal()">Yêu Cầu Tư Vấn</button>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--bidv-blue);" class="lang-en">Explore Our Credit Card Options</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--bidv-blue);" class="lang-vi" style="display: none;">Khám Phá Các Lựa Chọn Thẻ Tín Dụng</h2>
+            
+            <div class="carousel-container">
+
+                <div class="carousel-wrapper">
+                    <!-- Card 1 - CASHBACK 360 -->
+                    <div class="carousel-card">
+                        <img src="image-cashback360.png" alt="BIDV Standard Credit Card">
+                    </div>
+                    <!-- Card 2 - CASHBACKONLINE -->
+                    <div class="carousel-card">
+                        <img src="image-cashbackOnline.png" alt="BIDV Gold Credit Card">
+                    </div>
+                    <!-- Card 3 - EASY -->
+                    <div class="carousel-card">
+                        <img src="image-visaEasy.png" alt="BIDV Platinum Credit Card">
+                    </div>
+                    <!-- Card 4 - FLEXI -->
+                    <div class="carousel-card">
+                        <img src="image-visaFlexi.png" alt="BIDV Signature Credit Card">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="card-benefits">
+                <div class="benefit-card">
+                    <i>💳</i>
+                    <h3 class="lang-en">Cashback Rewards</h3>
+                    <h3 class="lang-vi" style="display: none;">Hoàn Tiền</h3>
+                    <p class="lang-en">Earn up to 5% cashback on your everyday purchases and special transactions.</p>
+                    <p class="lang-vi" style="display: none;">Kiếm tới 5% hoàn tiền cho các giao dịch hàng ngày và giao dịch đặc biệt của bạn.</p>
+                </div>
+                <div class="benefit-card">
+                    <i>🛡️</i>
+                    <h3 class="lang-en">Advanced Security</h3>
+                    <h3 class="lang-vi" style="display: none;">Bảo Mật Nâng Cao</h3>
+                    <p class="lang-en">Enjoy peace of mind with our state-of-the-art security features and fraud protection.</p>
+                    <p class="lang-vi" style="display: none;">Tận hưởng sự yên tâm với các tính năng bảo mật hiện đại và bảo vệ gian lận của chúng tôi.</p>
+                </div>
+                <div class="benefit-card">
+                    <i>✈️</i>
+                    <h3 class="lang-en">Travel Benefits</h3>
+                    <h3 class="lang-vi" style="display: none;">Đặc Quyền Du Lịch</h3>
+                    <p class="lang-en">Access to airport lounges, travel insurance, and exclusive discounts worldwide.</p>
+                    <p class="lang-vi" style="display: none;">Truy cập vào phòng chờ sân bay, bảo hiểm du lịch và giảm giá độc quyền trên toàn thế giới.</p>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="lang-en">Apply for Your BIDV Credit Card Today</h2>
+                <h2 class="lang-vi" style="display: none;">Đăng Ký Thẻ Tín Dụng BIDV Ngay Hôm Nay</h2>
+                
+                <form class="card-form" id="OnLineLeadForm" method="post" action="https://presales.businessbywire.com/appgold8demo/ProcessAnonymous/OnlineLeadCapture?x=25xgkuqlsapsn67x4pygd2jkrk6m72jvlen6vdzn7tjjah84auerhkhnhralk3brshfc96w9zw737456f3x9un7jmz66gzz2hj2asrx7zjtan8tgg8dq">
+                    <input type="hidden" name="debug" value="1"> 
+                    <input type="hidden" name="debugEmail" value="james@crmnext.com"> 
+                    <input type=hidden name="SuccessReturnURL" value="https://bit.ly/3Y8JotI"> 
+                    <input type=hidden name="FailureReturnURL" value="https://www.businessnext.com/error"> 
+                    <input id="Product" name="ProductName" type="hidden" class="field" value="9">
+                    <select id="Layout" name="Layout" style="display: none;">
+                        <option value="102994">Credit Cards Process (Vietnam)</option>
+						<!--<option value="102737">Individual Lead</option>-->
+                    </select>
+                    <select id="StatusCode" name="StatusCode" style="display: none;">
+                        <option value="100003">New</option>
+                    </select>
+                    <div class="form-group">
+                        <label  for="FName" class="lang-en">First Name</label>
+                        <label  for="FName" class="lang-vi" style="display: none;">Tên</label>
+                        <input type="text" id="FName" name="FName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="LName" class="lang-en">Last Name</label>
+                        <label for="LName" class="lang-vi" style="display: none;">Họ</label>
+                        <input type="text" id="LName" name="LName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Company" class="lang-en">Company Name</label>
+                        <label for="Company" class="lang-vi" style="display: none;">Tên công ty</label>
+                        <input type="text" id="Company" name="Company" required>
+                    </div>
+                   
+                    
+                    <div class="form-group">
+                        <label class="lang-en">National ID/CCCD Number</label>
+                        <label class="lang-vi" style="display: none;">Số CMND/CCCD</label>
+                        <input type="text" id="cust_2143" name="cust_2143" value="" >
+                    </div>
+                    
+                   <!-- <div class="form-group">
+                        <label class="lang-en">Date of Birth</label>
+                        <label class="lang-vi" style="display: none;">Ngày Sinh</label>
+                        <input type="text" id="cust_2150" name="cust_2150" value="" placeholder="dd-mm-yyyy" >
+                    </div> -->
+                    
+                    <div class="form-group">
+                        <label for="MobPhone" class="lang-en">Email</label>
+                        <label for="MobPhone" class="lang-vi" style="display: none;">Email</label>
+                        <input type="text" id="Email" name="Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MobPhone" class="lang-en">Mobile Number</label>
+                        <label for="MobPhone" class="lang-vi" style="display: none;">Số Điện Thoại</label>
+                        <input type="text" id="MobPhone" name="MobPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="lang-en">Address</label>
+                        <label class="lang-vi" style="display: none;">Địa Chỉ</label>
+                        <input type="text" id="Address" name="Address">
+                    </div>
+                    
+                    <!-- <div class="form-group">
+                        <label class="lang-en">Employed From</label>
+                        <label class="lang-vi" style="display: none;">Được tuyển dụng từ</label>
+                        <input type="date" name="length_of_service" id="cust_7344" value="">
+                    </div> -->
+                    
+                    <div class="form-group">
+                        <label class="lang-en">Annual Income (VND)</label>
+                        <label class="lang-vi" style="display: none;">Thu Nhập Hàng Năm (VND)</label>
+                        <input type="text" name="cust_5773" id="cust_5773" value="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Product" class="lang-en">Preferred Credit Card Type</label>
+                        <label for="Product" class="lang-vi" style="display: none;">Loại Thẻ Tín Dụng Ưa Thích</label>
+                        <select name="Product" id="Product" onchange="UpdateProductName();" required>
+                            <option value="1000408" class="lang-en">BIDV Visa Cashback 360</option>
+                            <option value="1000408" class="lang-vi" style="display: none;">BIDV Visa Hoàn Tiền 360</option>
+                            <option value="1000406" class="lang-en">BIDV Visa Cashback Online</option>
+                            <option value="1000406" class="lang-vi" style="display: none;">BIDV Hoàn Tiền Online</option>
+                            <option value="1000407" id="Visa" class="lang-en">BIDV Visa Infinite</option>
+                            <option value="1000407" class="lang-vi" style="display: none;">BIDV Visa Vô Hạn</option>
+                        </select>
+                    </div>
+                    
+                <div class="form-submit">
+                    <button class="btn-primary lang-en" name="submit" type="submit" onclick="return IsValidForm();">Submit Application</button>
+                    <button class="btn-primary lang-vi" name="submit" type="submit" style="display: none;" onclick="return IsValidForm();">Gửi Đơn Đăng Ký</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="lang-en">Contact Us</h4>
+                    <h4 class="lang-vi" style="display: none;">Liên Hệ</h4>
+                    <ul>
+                        <li class="lang-en">Hotline: 1900 9247</li>
+                        <li class="lang-vi" style="display: none;">Đường dây nóng: 1900 9247</li>
+                        <li class="lang-en">Email: bidv247@bidv.com.vn</li>
+                        <li class="lang-vi" style="display: none;">Email: bidv247@bidv.com.vn</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="lang-en">Quick Links</h4>
+                    <h4 class="lang-vi" style="display: none;">Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="#" class="lang-en">About BIDV</a></li>
+                        <li><a href="#" class="lang-vi" style="display: none;">Về BIDV</a></li>
+                        <li><a href="#" class="lang-en">Credit Card Products</a></li>
+                        <li><a href="#" class="lang-vi" style="display: none;">Sản Phẩm Thẻ Tín Dụng</a></li>
+                        <li><a href="#" class="lang-en">Branches & ATMs</a></li>
+                        <li><a href="#" class="lang-vi" style="display: none;">Chi Nhánh & ATM</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="lang-en">Legal</h4>
+                    <h4 class="lang-vi" style="display: none;">Pháp Lý</h4>
+                    <ul>
+                        <li><a href="#" class="lang-en">Terms & Conditions</a></li>
+                        <li><a href="#" class="lang-vi" style="display: none;">Điều Khoản & Điều Kiện</a></li>
+                        <li><a href="#" class="lang-en">Privacy Policy</a></li>
+                        <li><a href="#" class="lang-vi" style="display: none;">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#" class="lang-en">Card Agreement</a></li>
+                        <li><a href="#" class="lang-vi" style="display: none;">Thỏa Thuận Thẻ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="lang-en">© 2025 BIDV (Bank for Investment and Development of Vietnam). All rights reserved.</p>
+                <p class="lang-vi" style="display: none;">© 2025 BIDV (Ngân hàng Đầu tư và Phát triển Việt Nam). Tất cả các quyền được bảo lưu.</p>
+                <p class="lang-en">This website is a demonstration and does not offer actual products/services. All information is for illustrative purposes only.</p>
+                <p class="lang-vi" style="display: none;">Trang web này chỉ là một bản demo và không cung cấp sản phẩm/dịch vụ thực tế. Tất cả thông tin chỉ mang tính chất minh họa.</p>
+            </div>
+        </div>
+    </footer>
+    <script > 
+	function UpdateProductName() { var prodObj = document.getElementById('Product'); var prodNameObj = document.getElementById('ProductName'); prodNameObj.value = prodObj.options[prodObj.selectedIndex].text; } function UpdateTerritoryName() { var terrObj = document.getElementById('Territory'); var terrNameObj = document.getElementById('TerritoryName'); terrNameObj.value = terrObj.options[terrObj.selectedIndex].text; } 
+    function IsValidForm() { var errMessage = ''; if ( document.getElementById('LName').value == '') { errMessage = 'Enter LastName.\n'; } if (document.getElementById('Company').value == '') { errMessage += 'Enter Company.\n'; } if ( !IsValidEmail() ) { errMessage += 'Not a valid EmailID.\n'; } if ( !IsValidWebURL() ) { errMessage += 'Not a valid WebUrl.\n'; } if ( errMessage != '' ){ alert(errMessage); return false; } return true; } function IsValidEmail() { if (document.getElementById('Email') == null) return true; var inem = document.getElementById("Email").value; if( inem != null && inem !='') { var filter=/^(\w+(?:\.\w+)*)@((?:\w+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; if ( !filter.test(inem) ) return false; } return true; } function IsValidWebURL() { return true; var website = document.getElementById("Website").value; var URL = /^((file|http):\/\/\S)*$/; if ( !URL.test(website) ) return false; return true; }
+    </script>
+    <script>
+        function switchLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const viElements = document.querySelectorAll('.lang-vi');
+            const enButton = document.querySelector('.language-toggle button:first-child');
+            const viButton = document.querySelector('.language-toggle button:last-child');
+            
+            if (lang === 'en') {
+                enElements.forEach(el => el.style.display = 'block');
+                viElements.forEach(el => el.style.display = 'none');
+                enButton.classList.add('active');
+                viButton.classList.remove('active');
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                viElements.forEach(el => el.style.display = 'block');
+                enButton.classList.remove('active');
+                viButton.classList.add('active');
+            }
+        }
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('en');
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            const cards = document.querySelectorAll('.carousel-card');
+            
+            let currentIndex = 0;
+            let totalCards = cards.length;
+            let cardsToShow = 1;
+            let cardWidth = 0;
+            let cardMargin = 40; // 20px margin on each side
+            
+            // Function to calculate dimensions based on viewport
+            function calculateDimensions() {
+                const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+                
+                if (window.innerWidth >= 1200) {
+                    cardsToShow = Math.min(4, totalCards); // Show up to 4 cards on very large screens
+                } else if (window.innerWidth >= 992) {
+                    cardsToShow = Math.min(3, totalCards); // Show up to 3 cards on large screens
+                } else if (window.innerWidth >= 768) {
+                    cardsToShow = Math.min(2, totalCards); // Show up to 2 cards on medium screens
+                } else {
+                    cardsToShow = 1; // Show 1 card on small screens
+                }
+                
+                // Fixed card width because we're using exact dimensions
+                cardWidth = 185 + cardMargin; // Card width + margins
+                
+                // Center the carousel container
+                const containerPadding = Math.max(0, (containerWidth - (cardWidth * cardsToShow)) / 2);
+                carouselWrapper.style.paddingLeft = `${containerPadding}px`;
+                
+                // Update carousel position
+                updateCarousel();
+            }
+            // Function to update carousel position
+            function updateCarousel() {
+                const offset = currentIndex * cardWidth;
+                carouselWrapper.style.transform = `translateX(-${offset}px)`;
+            }
+            // Initialize carousel
+            calculateDimensions();
+            // Responsive handling
+            window.addEventListener('resize', calculateDimensions);
+            // Auto-play functionality
+            let autoPlayInterval = setInterval(() => {
+                const maxIndex = totalCards - cardsToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 5000);
+            // Pause auto-play on hover
+            carouselWrapper.addEventListener('mouseenter', () => {
+                clearInterval(autoPlayInterval);
+            });
+            
+            carouselWrapper.addEventListener('mouseleave', () => {
+                autoPlayInterval = setInterval(() => {
+                    const maxIndex = totalCards - cardsToShow;
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
+                    updateCarousel();
+                }, 5000);
+            });
+        });
+    </script>
+<script>
+    // Consultation Modal Functions
+function openConsultationModal() {
+    document.getElementById('consultationModal').style.display = 'block';
+    document.getElementById('consultationForm').style.display = 'block';
+    document.getElementById('thankYouMessage').style.display = 'none';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+}
+function closeConsultationModal() {
+    document.getElementById('consultationModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+function submitConsultation() {
+    // In a real implementation, you would validate and process the form data here
+    document.getElementById('consultationForm').style.display = 'none';
+    document.getElementById('thankYouMessage').style.display = 'block';
+    // Optional: You could add a timer to automatically close the modal after submission
+    // setTimeout(closeConsultationModal, 5000);
+}
+// Close modal when clicking outside the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('consultationModal');
+    if (event.target == modal) {
+        closeConsultationModal();
+    }
+}
+</script>
+
+ <!-- Consultation Modal
+<div id="consultationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeConsultationModal()">&times;</span>
+        
+        <div id="consultationForm">
+            <h2 class="lang-en" style="color: var(--bidv-blue); margin-bottom: 20px;">Request Credit Card Consultation</h2>
+            <h2 class="lang-vi" style="display: none; color: var(--bidv-blue); margin-bottom: 20px;">Yêu Cầu Tư Vấn Thẻ Tín Dụng</h2>
+            
+            <form class="card-form">
+                <div class="form-group">
+                    <label class="lang-en">Full Name</label>
+                    <label class="lang-vi" style="display: none;">Họ và Tên</label>
+                    <input type="text" name="FullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="lang-en">Email</label>
+                    <label class="lang-vi" style="display: none;">Email</label>
+                    <input type="email" name="email1" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="lang-en">Mobile Number</label>
+                    <label class="lang-vi" style="display: none;">Số Điện Thoại</label>
+                    <input type="tel" name="Mob" required>
+                </div>
+            
+            <div class="form-submit">
+                <button class="btn-primary lang-en" onclick="submitConsultation()">Submit Request</button>
+                <button class="btn-primary lang-vi" style="display: none;" onclick="submitConsultation()">Gửi Yêu Cầu</button>
+            </div>
+        </div>
+        
+        <div id="thankYouMessage" class="thank-you-message">
+            <h3 class="lang-en">Thank you for processing your request with BIDV!</h3>
+            <h3 class="lang-vi" style="display: none;">Cảm ơn bạn đã gửi yêu cầu tư vấn đến BIDV!</h3>
+            <p class="lang-en">Our consultants will contact you shortly.</p>
+            <p class="lang-vi" style="display: none;">Chuyên viên tư vấn của chúng tôi sẽ liên hệ với bạn sớm.</p>
+            <button class="btn-primary lang-en" onclick="closeConsultationModal()">Close</button>
+            <button class="btn-primary lang-vi" style="display: none;" onclick="closeConsultationModal()">Đóng</button>
+        </div>
+    </div>
+</div> -->
+
+
+<script>
+    // Age Validation Function
+function validateAge() {
+    const dobInput = document.querySelector('input[type="date"]');
+    const submitButton = document.querySelector('.btn-primary');
+    const ageModal = document.getElementById('ageValidationModal');
+    
+    if (!dobInput.value) return;
+
+    // Calculate age
+    const birthDate = new Date(dobInput.value);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    
+    // Adjust age if birthday hasn't occurred this year
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    // Check age and show modal if under 18
+    if (age < 18) {
+        // Prevent form submission
+        submitButton.disabled = true;    
+        // Show age validation modal
+        ageModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        return false;
+    }
+    // Enable submit button if age is valid
+    submitButton.disabled = false;
+    return true;
+}
+// Add event listener to date input
+document.addEventListener('DOMContentLoaded', function() {
+    const dobInput = document.querySelector('input[type="date"]');
+    dobInput.addEventListener('change', validateAge);
+    // Close modal function
+    const closeAgeModal = () => {
+        const ageModal = document.getElementById('ageValidationModal');
+        ageModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+    // Add close button event listener
+    const ageModalCloseBtn = document.querySelector('#ageValidationModal .close-modal');
+    if (ageModalCloseBtn) {
+        ageModalCloseBtn.addEventListener('click', closeAgeModal);
+    }
+});
+</script>
+<!-- Age Validation Modal -->
+<div id="ageValidationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="age-validation-content">
+            <h2 class="lang-en" style="color: var(--bidv-blue); text-align: center;">Age Restriction</h2>
+            <h2 class="lang-vi" style="display: none; color: var(--bidv-blue); text-align: center;">Giới Hạn Tuổi</h2>
+            
+            <p class="lang-en" style="text-align: center; margin: 20px 0;">
+                Sorry, you must be at least 18 years old to apply for a BIDV Credit Card.
+            </p>
+            <p class="lang-vi" style="display: none; text-align: center; margin: 20px 0;">
+                Rất tiếc, bạn phải từ 18 tuổi trở lên mới được đăng ký Thẻ Tín Dụng BIDV.
+            </p>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                <button class="btn-primary lang-en" onclick="document.getElementById('ageValidationModal').style.display='none'; document.body.style.overflow='auto';">
+                    Understand
+                </button>
+                <button class="btn-primary lang-vi" style="display: none;" onclick="document.getElementById('ageValidationModal').style.display='none'; document.body.style.overflow='auto';">
+                    Hiểu Rồi
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const annualIncomeInput = document.querySelector('input[name="cust_5773"]');
+    const preferredCardSelect = document.querySelector('select[name="Product"]');
+    
+    // Function to format number with commas
+    function formatCurrency(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
+    // Function to create eligibility modal
+    function createEligibilityModal() {
+        const modal = document.createElement('div');
+        modal.id = 'cardEligibilityModal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content" style="max-width: 450px; text-align: center; padding: 30px;">
+                <span class="close-modal" onclick="this.closest('.modal').style.display='none'; document.body.style.overflow='auto';">&times;</span>
+                <h2 class="lang-en" style="color: var(--bidv-blue); margin-bottom: 20px;">Card Eligibility</h2>
+                <h2 class="lang-vi" style="display: none; color: var(--bidv-blue); margin-bottom: 20px;">Điều Kiện Thẻ</h2>
+                <p class="lang-en" id="eligibilityMessage" style="margin-bottom: 20px;"></p>
+                <p class="lang-vi" id="eligibilityMessageVi" style="display: none; margin-bottom: 20px;"></p>
+                <div id="creditLimitSection" style="background-color: var(--bidv-light-gray); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 class="lang-en" style="color: var(--bidv-blue); margin-bottom: 10px;">Credit Limit</h3>
+                    <h3 class="lang-vi" style="display: none; color: var(--bidv-blue); margin-bottom: 10px;">Hạn Mức Tín Dụng</h3>
+                    <p class="lang-en" id="creditLimitMessage"></p>
+                    <p class="lang-vi" id="creditLimitMessageVi" style="display: none;"></p>
+                </div>
+                <button class="btn-primary lang-en" onclick="this.closest('.modal').style.display='none'; document.body.style.overflow='auto';">
+                    Close
+                </button>
+                <button class="btn-primary lang-vi" style="display: none;" onclick="this.closest('.modal').style.display='none'; document.body.style.overflow='auto';">
+                    Đóng
+                </button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        return modal;
+    }
+    
+    // Ensure modal exists
+    let cardEligibilityModal = document.getElementById('cardEligibilityModal');
+    if (!cardEligibilityModal) {
+        cardEligibilityModal = createEligibilityModal();
+    }
+    
+    // Function to handle income-based card selection
+    function handleIncomeBasedCardSelection(event) {
+        // Remove any comma separators and parse the income
+        const income = parseFloat(event.target.value.replace(/,/g, ''));
+        
+        // Get modal elements
+        const eligibilityMessage = document.getElementById('eligibilityMessage');
+        const eligibilityMessageVi = document.getElementById('eligibilityMessageVi');
+        const creditLimitMessage = document.getElementById('creditLimitMessage');
+        const creditLimitMessageVi = document.getElementById('creditLimitMessageVi');
+        const creditLimitSection = document.getElementById('creditLimitSection');
+        
+        // Reset visibility
+        creditLimitSection.style.display = 'block';
+        
+        // Calculate credit limit (3x annual income, max 100 million)
+        const rawCreditLimit = Math.min(income * 3, 100000000);
+        const formattedCreditLimit = formatCurrency(rawCreditLimit);
+        
+        if (income >= 20000000) {
+            // Set to Infinite card for incomes 20000000 or more
+            preferredCardSelect.value = '1000407';
+            
+            // Show modal
+            cardEligibilityModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Set messages
+            eligibilityMessage.textContent = 'You are eligible for the BIDV Visa Infinite Card based on your income!';
+            eligibilityMessageVi.textContent = 'Bạn đủ điều kiện để nhận Thẻ BIDV Visa Vô Hạn dựa trên thu nhập của mình!';
+            
+            // Credit limit messages
+            creditLimitMessage.textContent = `Your credit limit is VND ${formattedCreditLimit}`;
+            creditLimitMessageVi.textContent = `Hạn mức tín dụng của bạn là ${formattedCreditLimit} VND`;
+        } else if (income >= 10000000 && income < 20000000) {
+            // Set to Cashback 360 card for incomes between 10,00,000 and 19,99,999
+            preferredCardSelect.value = '1000408';
+            
+            // Show modal
+            cardEligibilityModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Set messages
+            eligibilityMessage.textContent = 'You are eligible for the BIDV Visa Cashback 360 Card based on your income!';
+            eligibilityMessageVi.textContent = 'Bạn đủ điều kiện để nhận Thẻ BIDV Visa Hoàn Tiền 360 dựa trên thu nhập của mình!';
+            
+            // Credit limit messages
+            creditLimitMessage.textContent = `Your credit limit is VND ${formattedCreditLimit}`;
+            creditLimitMessageVi.textContent = `Hạn mức tín dụng của bạn là ${formattedCreditLimit} VND`;
+        } else {
+            // Reset card type if income is below threshold
+            preferredCardSelect.value = ''; // or set to a default value
+            
+            // Hide credit limit section if income is too low
+            creditLimitSection.style.display = 'none';
+            return;
+        }
+        
+        // Ensure language sync
+        const currentLanguage = document.querySelector('.language-toggle button.active').textContent === 'English' ? 'en' : 'vi';
+        switchLanguage(currentLanguage);
+    }
+    
+    // Add event listener to annual income input
+    annualIncomeInput.addEventListener('input', function(event) {
+        // Add comma formatting to input
+        let value = event.target.value.replace(/,/g, '');
+        event.target.value = formatCurrency(value);
+        
+        // Trigger card selection logic
+        handleIncomeBasedCardSelection(event);
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const employedFromInput = document.querySelector('input[name="length_of_service"]');
+        const submitButton = document.querySelector('.btn-primary');
+        const serviceModal = document.getElementById('serviceLengthValidationModal');
+    
+        function validateServiceLength() {
+            // Ensure input exists
+            if (!employedFromInput) {
+                console.error('Employed from input not found');
+                return false;
+            }
+    
+            // Get the input value (date)
+            const employedFromDate = new Date(employedFromInput.value);
+            const currentDate = new Date();
+    
+            // Calculate months of service
+            const monthsDifference = (currentDate.getFullYear() - employedFromDate.getFullYear()) * 12 +
+                                     (currentDate.getMonth() - employedFromDate.getMonth());
+    
+            // Validation checks
+            if (isNaN(employedFromDate.getTime()) || monthsDifference < 6) {
+                // Show modal
+                if (serviceModal) {
+                    serviceModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Disable submit button
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                    }
+                    
+                    return false;
+                }
+            } else {
+                // Enable submit button if service length is valid
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+                return true;
+            }
+        }
+    
+        // Add event listeners
+        if (employedFromInput) {
+            employedFromInput.addEventListener('input', validateServiceLength);
+            employedFromInput.addEventListener('change', validateServiceLength);
+        }
+    
+        // Close modal function
+        function closeServiceModal() {
+            if (serviceModal) {
+                serviceModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    
+        // Add close button event listener
+        const serviceModalCloseBtn = document.querySelector('#serviceLengthValidationModal .close-modal');
+        if (serviceModalCloseBtn) {
+            serviceModalCloseBtn.addEventListener('click', closeServiceModal);
+        }
+    
+        // Optional: Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === serviceModal) {
+                closeServiceModal();
+            }
+        });
+    });
+    </script>
+    
+    <!-- Service Length Validation Modal 
+    <div id="serviceLengthValidationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="service-validation-content">
+                <h2 class="lang-en" style="color: var(--bidv-blue); text-align: center;">Employment Criteria</h2>
+                <h2 class="lang-vi" style="display: none; color: var(--bidv-blue); text-align: center;">Điều Kiện Việc Làm</h2>
+                <p class="lang-en" style="text-align: center; margin: 20px 0;">
+                    We apologize, but you must have been employed for at least 6 months to be eligible for a BIDV Credit Card. 
+                    This helps us ensure financial stability and responsible lending.
+                </p>
+                <p class="lang-vi" style="display: none; text-align: center; margin: 20px 0;">
+                    Chúng tôi xin lỗi, nhưng bạn phải có thời gian làm việc ít nhất 6 tháng để đủ điều kiện nhận Thẻ Tín Dụng BIDV. 
+                    Điều này giúp chúng tôi đảm bảo tính ổn định tài chính và cho vay có trách nhiệm.
+                </p>
+                <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                    <button class="btn-primary lang-en" onclick="document.getElementById('serviceLengthValidationModal').style.display='none'; document.body.style.overflow='auto';">
+                        Understand
+                    </button>
+                    <button class="btn-primary lang-vi" style="display: none;" onclick="document.getElementById('serviceLengthValidationModal').style.display='none'; document.body.style.overflow='auto';">
+                        Hiểu Rồi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+</body>
+</html> 
